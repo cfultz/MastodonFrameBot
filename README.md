@@ -26,15 +26,15 @@ If you make an account running this bot, crediting [@pigeonburger](https://twitt
 
     If the video files you have are not in the `mp4` format, change line 10 of `setupbot.py` to the relevant extension (e.g. `*.mkv`)
 
-2. Download the `setupbot.py` and `bot.py` files from here, and place them in the same folder as all the TV show episodes.
+2. Download the `setupbot.py` and `mastodon_bot.py` files from here, and place them in the same folder as all the TV show episodes.
 
 3. Run the `setupbot.py` file. This program will split all the videos into their individual frames (default `1fps`), placing them all inside a folder called `frames`, and enter some details into a database file called `framebot.db`, which is required for the Twitter bot to run. 
 
     Video processing is very CPU-intensive, so depending on the speed of your computer, this script may take a while to complete. Once it finally does finish running, you can delete the video files if you want.
 
-4. Open the `bot.py` file for editing, and enter in your Twitter account's Consumer Key, Consumer Secret, Access Token, and Access Token Secret. Also enter the name of the show by updating the `show_name` variable a bit further below.
+4. Open the `mastodon_bot.py` file for editing, and enter in your Twitter account's Consumer Key, Consumer Secret, Access Token, and Access Token Secret. Also enter the name of the show by updating the `show_name` variable a bit further below.
 
-5. The bot is now ready to run! You'll need to use a program like `Cron` on Linux or `Task Scheduler` on Windows to execute `bot.py` every however many minutes you want. By default, the bot will post 5 frames from the show every time the script is run.
+5. The bot is now ready to run! You'll need to use a program like `Cron` on Linux or `Task Scheduler` on Windows to execute `mastodon_bot.py` every however many minutes you want. By default, the bot will post 5 frames from the show every time the script is run.
 
 # License
 This code is released under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license. 
