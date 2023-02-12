@@ -66,11 +66,7 @@ while iters > 0:
     frame_path = f"./frames/S{ep_season}/{ep_num}x{next_frame}.jpg"
 
     # The message to attach to the toot
-    # For Movies
-    msg = f"{show_name} - Frame {next_frame} of {total_frames}"
-    
-    # For TV shows
-    # msg = {show_name} - Season {ep_season} Episode {ep_num} - Frame {next_frame} of {total_frames}
+    msg = {show_name} - Season {ep_season} Episode {ep_num} - Frame {next_frame} of {total_frames}
 
     # Send the toot
     media = mastodon.media_post(frame_path)
