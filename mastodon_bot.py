@@ -12,7 +12,7 @@ from mastodon import Mastodon
 # Set up Mastodon
 mastodon = Mastodon(
     access_token = 'token.secret',
-    api_base_url = 'https://cfultz.com'
+    api_base_url = 'https://botsin.space'
 )
 
 
@@ -21,7 +21,7 @@ connection = db.connect("framebot.db")
 cursor = connection.cursor()
 
 # Enter the name of the show you're posting frames for here:
-show_name = "Jaws"
+show_name = ""
 
 # Put the number of frames the bot should post each time this script is run here.
 iters = 5
@@ -63,12 +63,16 @@ while iters > 0:
         # Need to add a check here to see if the entire series is finished or not....
 
     # Get the file path for the next frame to upload.
-    frame_path = f"./frames/S01/01x{next_frame}.jpg"
+    frame_path = f"./frames/S{ep_season}/{ep_num}x{next_frame}.jpg"
 
-    # The message to attach to the tweet
+    # The message to attach to the toot
+    # For Movies
     msg = f"{show_name} - Frame {next_frame} of {total_frames}"
+    
+    # For TV shows
+    # msg = {show_name} - Season {ep_season} Episode {ep_num} - Frame {next_frame} of {total_frames}
 
-    # Send the Tweet
+    # Send the toot
     media = mastodon.media_post(frame_path)
 
     mastodon.status_post(msg,media_ids=media)
